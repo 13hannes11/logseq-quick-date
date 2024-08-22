@@ -2,7 +2,7 @@
   "name": "logseq-quick-date",
   "version": "0.0.1",
   "description": "Support more dates like the in-build 'Tomorrow' command such as 'Last Wednesday' and 'Next Friday'.",
-  "main": "index.html",
+  "main": "src/index.html",
   "author": "Hannes Kuchelmeister",
   "license": "MIT",
   "logseq": {
