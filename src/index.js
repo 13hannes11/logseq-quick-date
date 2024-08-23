@@ -1,5 +1,5 @@
-const DateTime = luxon.DateTime; // https://moment.github.io/luxon/
-const Duration = luxon.Duration;
+const { DateTime, Duration } = require("luxon");
+import "@logseq/libs";
 
 // Weeks start with Monday which is day 1
 const weekStartIndex = 1

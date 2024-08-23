@@ -2,10 +2,24 @@
   "name": "logseq-quick-date",
   "version": "0.0.1",
   "description": "Support more dates like the in-build 'Tomorrow' command such as 'Last Wednesday' and 'Next Friday'.",
-  "main": "src/index.html",
+  "main": "dist/index.html",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build --no-source-maps src/index.html --public-url ./"
+  },
   "author": "Hannes Kuchelmeister",
   "license": "MIT",
   "logseq": {
     "id": "logseq-quick-date"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "@logseq/libs": "^0.0.17",
+    "luxon": "^3.5.0"
   }
 }

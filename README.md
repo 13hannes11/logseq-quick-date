@@ -64,7 +64,9 @@ This minimalistic tool integrates seamlessly into your workflow, allowing you to
    ```sh
    git clone git@github.com:13hannes11/logseq-quick-date.git
    ```
-2. Go to Settings > Turn on Developer Mode
+2. Install bun or npm
+3. Run `npm install && npm run build` or `bun install && bun run build`
+3. Go to Settings > Turn on Developer Mode
 3. Go to Plugins > Load unpacked plugin.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
