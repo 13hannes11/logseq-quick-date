@@ -1,49 +1,52 @@
-const { DateTime, Duration } = require("luxon");
+import { format, addDays, subDays, startOfWeek } from 'date-fns';
 import "@logseq/libs";
 
 // Weeks start with Monday which is day 1
-const weekStartIndex = 1
+const weekStartIndex = 1; // Monday
 
-function startOfWeek(date) {
-  const durationUntillStartOfWeek = durationFromDays(date.weekday - weekStartIndex);
-  return date.minus(durationUntillStartOfWeek);
+function startOfWeekFromDate(date) {
+  return startOfWeek(date, { weekStartsOn: weekStartIndex });
 }
 
 function durationFromDays(days) {
-  return Duration.fromObject({ days: days});
+  return days;
 }
 
 function dayHasPassed(dayNumber) {
-  return dayNumber < DateTime.local().weekday
+  const today = new Date();
+  const todayDayNumber = today.getDay();
+  return dayNumber < todayDayNumber || (dayNumber === 0 && todayDayNumber !== 0);
 }
 
 function dayIsToday(dayNumber) {
-  return dayNumber === DateTime.local().weekday
+  const today = new Date();
+  const todayDayNumber = today.getDay();
+  return dayNumber === todayDayNumber;
 }
 
 function dateOfPreviousWeekdayWith(dayNumber) {
-  const currentDate = DateTime.local();
-  if(dayHasPassed(dayNumber)) {
-    return startOfWeek(currentDate).plus(durationFromDays(dayNumber - weekStartIndex));
+  const currentDate = new Date();
+  if (dayHasPassed(dayNumber)) {
+    return addDays(startOfWeekFromDate(currentDate), dayNumber - weekStartIndex);
   } else {
-    return startOfWeek(currentDate).minus(durationFromDays(7 - dayNumber + weekStartIndex));
+    return subDays(startOfWeekFromDate(currentDate), 7 - dayNumber + weekStartIndex);
   }
 }
 
 function dateOfNextWeekdayWith(dayNumber) {
-  const currentDate = DateTime.local();
-  if(dayHasPassed(dayNumber) || dayIsToday(dayNumber)) {
-    const startOfNextWeek = startOfWeek(currentDate.plus(durationFromDays(7)))
-    return startOfNextWeek.plus(durationFromDays(dayNumber - weekStartIndex));
+  const currentDate = new Date();
+  if (dayHasPassed(dayNumber) || dayIsToday(dayNumber)) {
+    const startOfNextWeek = addDays(startOfWeekFromDate(currentDate), 7);
+    return addDays(startOfNextWeek, dayNumber - weekStartIndex);
   } else {
-    return startOfWeek(currentDate).plus(durationFromDays(dayNumber - weekStartIndex));
+    return addDays(startOfWeekFromDate(currentDate), dayNumber - weekStartIndex);
   }
 }
 
 async function addDateToLogseq(date) {
   const { preferredDateFormat } = await logseq.App.getUserConfigs();
-  logseq.ready(main).catch(console.error)
-  await logseq.Editor.insertAtEditingCursor(`[[${date.toFormat(preferredDateFormat) }]] `)
+  logseq.ready(main).catch(console.error);
+  await logseq.Editor.insertAtEditingCursor(`[[${format(date, preferredDateFormat)}]] `);
 }
 
 const slashCommandFunctionMap = {
