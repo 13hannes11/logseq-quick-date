@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/13hannes11/logseq-quick-date">
-    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="./images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Logseq Quick Date Plugin</h3>
@@ -49,7 +49,7 @@ This minimalistic tool integrates seamlessly into your workflow, allowing you to
 
 ### Built With
 
-* [Luxon](https://moment.github.io/luxon/#/)
+* [date-fns](https://date-fns.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -130,4 +130,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-url]: https://github.com/13hannes11/logseq-quick-date/issues
 [license-shield]: https://img.shields.io/github/license/13hannes11/logseq-quick-date.svg?style=for-the-badge
 [license-url]: https://github.com/13hannes11/logseq-quick-date/blob/main/LICENSE.txt
-[product-screenshot]: images/usage.gif
+[product-screenshot]: ./images/usage.gif
