@@ -25,9 +25,10 @@ jobs:
         id: build
         run: |
           npm i && npm run build
-          mkdir ${{ env.PLUGIN_NAME }}
-          cp README.md package.json ${{ env.PLUGIN_NAME }}
-          mv images ${{ env.PLUGIN_NAME }}
+          mkdir "${{ env.PLUGIN_NAME }}" 
+          cp README.md package.json "${{ env.PLUGIN_NAME }}"
+          mkdir "${{ env.PLUGIN_NAME }}/images"
+          cp images/logo.jpg "${{ env.PLUGIN_NAME }}/images"
           mv dist ${{ env.PLUGIN_NAME }}
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           ls
