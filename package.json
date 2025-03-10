@@ -18,7 +18,7 @@
     "icon": "./images/logo.jpg"
   },
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "parcel": "^2.13.3"
   },
   "dependencies": {
     "@logseq/libs": "^0.0.17",
