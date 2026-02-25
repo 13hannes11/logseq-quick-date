@@ -21,7 +21,7 @@
     "parcel": "^2.13.3"
   },
   "dependencies": {
-    "@logseq/libs": "^0.0.17",
+    "@logseq/libs": "^0.2.12",
     "date-fns": "^3.6.0"
   }
 }
