@@ -1,6 +1,6 @@
 {
   "name": "logseq-quick-date",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Support more dates like the in-build 'Tomorrow' command such as 'Last Wednesday' and 'Next Friday'.",
   "main": "dist/index.html",
   "targets": {
