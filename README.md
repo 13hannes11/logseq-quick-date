@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/13hannes11/logseq-quick-date">
-    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="./images/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Logseq Quick Date Plugin</h3>
@@ -37,7 +37,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![logseq screenshot with quickdate commands shown](images/usage.gif)
+![logseq screenshot with quickdate commands shown](./images/usage.gif)
 
 The Quick Date plugin enhances your Logseq experience by providing intuitive date commands.
 With this plugin, you can effortlessly reference specific dates using natural language inputs like “Last Tuesday” or “Next Wednesday.”
